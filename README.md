@@ -1,6 +1,6 @@
-# 📄 Configuração do Projeto Fatura MBilling
+# 📄 Configuração do Projeto de Faturas para MBilling
 
-Este guia descreve o processo de configuração do projeto **MBilling** no servidor.
+Este guia descreve o processo de configuração do projeto de **Faturas para MBilling** no servidor.
 
 ## 📁 Estrutura de Diretórios
 
@@ -36,13 +36,13 @@ Este guia descreve o processo de configuração do projeto **MBilling** no servi
    - Abra os arquivos e edite as respectivas linhas:
 
      ```bash
-     nano /var/www/html/mbilling/fatura/index.php
+     sudo nano /var/www/html/mbilling/fatura/index.php
      ```
 
      - Linha **65**: Insira a senha do banco de dados.
 
      ```bash
-     nano /var/www/html/mbilling/fatura/login.php
+     sudo nano /var/www/html/mbilling/fatura/login.php
      ```
 
      - Linha **18**: Insira a senha do banco de dados.
@@ -65,7 +65,7 @@ Este guia descreve o processo de configuração do projeto **MBilling** no servi
    Para isso, edite a linha **45** no arquivo `login.php`:
 
    ```bash
-   nano /var/www/html/mbilling/fatura/login.php
+   sudo nano /var/www/html/mbilling/fatura/login.php
    ```
 
    **Exemplo de código para verificar os grupos:**
@@ -74,6 +74,23 @@ Este guia descreve o processo de configuração do projeto **MBilling** no servi
    if ($user_group_id != 1 && $user_group_id != 5) {
        die("Acesso negado.");
    }
+   ```
+
+---
+
+## 🖼️ Personalização da Logo
+
+6. Para alterar a logo do sistema para a sua logo personalizada, substitua o arquivo da logo no diretório do projeto:
+
+   ```bash
+   sudo cp /caminho/da/sua/logo.png /var/www/html/mbilling/fatura/assets/img/logo.png
+   ```
+
+   Certifique-se de que o arquivo tenha as permissões corretas:
+
+   ```bash
+   sudo chown asterisk:asterisk /var/www/html/mbilling/fatura/assets/img/logo.png
+   sudo chmod 644 /var/www/html/mbilling/fatura/assets/img/logo.png
    ```
 
 ---
