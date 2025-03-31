@@ -71,11 +71,11 @@ Este guia descreve o processo de configuração do projeto de **Faturas para MBi
    **Exemplo de código para verificar os grupos:**
 
    ```php
-   if ($user_group_id != 1 && $user_group_id != 5) {
-       die("Acesso negado.");
+   // Verifica se o usuário pertence aos grupos Administrator (1) ou Gerenciamento (5)
+   if ($user['id_group'] != 1 && $user['id_group'] != 5) {
+       error = "Acesso negado. Apenas usuários dos grupos Administrator e Gerenciamento podem fazer login.";
+       error_log("Acesso negado - Grupo inválido: " . $user['id_group']);
    }
-   ```
-
 ---
 
 ## 🖼️ Personalização da Logo
@@ -83,14 +83,14 @@ Este guia descreve o processo de configuração do projeto de **Faturas para MBi
 6. Para alterar a logo do sistema para a sua logo personalizada, substitua o arquivo da logo no diretório do projeto:
 
    ```bash
-   sudo cp /caminho/da/sua/logo.png /var/www/html/mbilling/fatura/assets/img/logo.png
+   sudo cp /caminho/da/sua/logo.png /var/www/html/mbilling/fatura/logo.png
    ```
 
    Certifique-se de que o arquivo tenha as permissões corretas:
 
    ```bash
-   sudo chown asterisk:asterisk /var/www/html/mbilling/fatura/assets/img/logo.png
-   sudo chmod 644 /var/www/html/mbilling/fatura/assets/img/logo.png
+   sudo chown asterisk:asterisk /var/www/html/mbilling/fatura/logo.png
+   sudo chmod 644 /var/www/html/mbilling/fatura/logo.png
    ```
 
 ---
