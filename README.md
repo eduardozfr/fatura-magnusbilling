@@ -1,4 +1,4 @@
-# 📄 Configuração do Projeto MBilling
+# 📄 Configuração do Projeto Fatura MBilling
 
 Este guia descreve o processo de configuração do projeto **MBilling** no servidor.
 
